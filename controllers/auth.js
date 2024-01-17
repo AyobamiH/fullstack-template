@@ -1,10 +1,11 @@
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
+// const googleUser = require('../models/GoogleUser')
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect("/profile");
+    return res.redirect("/registered-user-search");
   }
   res.render("login", {
     title: "Login",
@@ -26,8 +27,9 @@ exports.postLogin = (req, res, next) => {
     gmail_remove_dots: false,
   });
 
-  passport.authenticate("local", (err, user, info) => {
+  passport.authenticate(["local", "google", "facebook", "instagram"], (err, user, info) => {
     if (err) {
+      console.log(err)
       return next(err);
     }
     if (!user) {
@@ -39,7 +41,7 @@ exports.postLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/profile");
+      res.redirect(req.session.returnTo || "/registered-user-result");
     });
   })(req, res, next);
 };
@@ -58,7 +60,7 @@ exports.logout = (req, res) => {
 
 exports.getSignup = (req, res) => {
   if (req.user) {
-    return res.redirect("/profile");
+    return res.redirect("/registered-user-search");
   }
   res.render("signup", {
     title: "Create Account",
@@ -110,7 +112,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/profile");
+          res.redirect("/registered-user-search");
         });
       });
     }
