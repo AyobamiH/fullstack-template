@@ -14,6 +14,7 @@ const feedbackRoutes = require("./routes/feedback")
 const feedRoutes = require("./routes/main");
 const fetchApodRoutes = require("./routes/fetchApod");
 const resultRoutes = require("./routes/result")
+const imageDetailsRoute = require("./routes/imageModal")
 
 
 const sanitizer = require('express-sanitizer');
