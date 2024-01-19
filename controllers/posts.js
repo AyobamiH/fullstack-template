@@ -1,8 +1,40 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
+const axios = require('axios'); // for CommonJS syntax
+const fetchAstronomyImages = async (startDate, endDate) => {
+    const apiKey = process.env.APOD_API_KEY;
+    const providedParams = {
+      
+        start_date: startDate,
+        end_date: endDate,
+       
+    };
 
+    // Construct the URL
+    const apiUrl = 'https://api.nasa.gov/planetary/apod';
+    
+    try {
+        const response = await axios.get(apiUrl, {
+            params: {
+                api_key: apiKey,
+                ...providedParams,
+            },
+        });
+
+        if (response.status !== 200) {
+          console.log(response.msg)
+            throw new Error('Error fetching data');
+        }
+
+        const data = response.data;
+        return data
+    } catch (error) {
+        console.error('Error fetching data:1', error);
+        // throw error;
+    }
+  }
 module.exports = {
-  getProfile: async (req, res) => { 
+  getRegisteredUserSearch: async (req, res) => { 
     console.log(req.user)
     try {
       //Since we have a session each request (req) contains the logged-in users info: req.user
@@ -10,7 +42,54 @@ module.exports = {
       //Grabbing just the posts of the logged-in user
       const posts = await Post.find({ user: req.user.id });
       //Sending post data from mongodb and user data to ejs template
-      res.render("profile.ejs", { posts: posts, user: req.user });
+      res.render("registered-user-search", { user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+   fetchNasaImagesByDateRange: async (req, res) => { 
+    console.log(req.user)
+    try {
+
+      const data = await fetchAstronomyImages(
+        
+        req.query.startDate,
+        req.query.endDate,
+       
+      );
+// console.log(data)
+            
+      if (data) {
+        // console.log(data)
+        res.render('fetch-nasa-images-by-date-range.ejs', { user: req.user, data: data });
+      } else {
+        // Handle the case when data is not available
+        res.render('registered-user-search.ejs', { user: req.user});
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'An error occurred while fetching data' });
+    }
+      //Since we have a session each request (req) contains the logged-in users info: req.user
+      //console.log(req.user) to see everything
+      //Grabbing just the posts of the logged-in user
+      // const posts = await Post.find({ user: req.user.id });
+      //Sending post data from mongodb and user data to ejs template
+  
+  },
+  getFeed: async (req, res) => {
+
+    try {
+    
+    
+      res.render("feed.ejs", {  user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  editProfile: async (req, res) => {
+    try {
+      
+      res.render("editprofile.ejs", {user: req.user });
     } catch (err) {
       console.log(err);
     }
