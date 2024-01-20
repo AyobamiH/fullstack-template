@@ -1,0 +1,557 @@
+* {
+  box-sizing: border-box;
+     font-family: 'Muli', sans-serif;
+     
+    
+}
+
+
+body {
+    margin: 2px;
+    padding:2px;
+    font-size: 62.5%;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+       
+header{
+        background-color: #F0F0F0; /* Light Gray */
+        padding: 10px;
+        text-align: center;
+}
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            margin-top: 10px;
+        }
+
+        .navigation a {
+            color: #0D1321; /* Dark Blue */
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        
+
+        .navigation a:hover {
+            color: #008000; /* Green */
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: white; /* Mid */
+        }
+        .hero-alt{
+          text-align: center;
+          padding: 50px;
+        }
+
+         .hero-alt h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero-alt p {
+            font-size: 18px;
+            
+        }
+
+        .cta-button {
+            background-color: #008000; /* Green */
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #006400; /* Dark Green */
+        }
+
+        .featured-content {
+            background-color: #FFF2CA; /* Light */
+            padding: 30px;
+            text-align: center;
+        }
+
+        .featured-content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .featured-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .categories {
+            background-color: #FFFCF4; /* Lightest */
+            padding: 30px;
+        }
+
+        .category {
+            border: 2px solid #FFA500; /* Dark Orange */
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .category h3 {
+            font-size: 24px;
+        }
+
+        .category p {
+            color: #788C9F; /* Mid */
+        }
+
+     
+/* Search Form Section */
+.search-form {
+      
+      padding: 20px;
+   
+    box-shadow: 2px 2px 2px 2px #cca971;
+    display: flex; /* Use flexbox to create a row-based layout */
+    flex-wrap: wrap; /* Allow elements to wrap to the next row if needed */
+    justify-content: center; /* Spread elements evenly in the row */
+}
+
+.hero-call-to-action-buttons-shadow{
+   border-radius: 25px;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+
+
+.hero-call-to-action-button-two{
+   border-radius: 25px;
+    box-shadow: 1px 1px 1px 1px rgb(202, 199, 199);
+
+}
+.search-form h2 {
+    color: #0D1321; /* Dark Blue */
+    font-size: 20px;
+    margin-bottom: 10px;
+    flex-basis: 100%; /* Full width for the heading */
+    text-align: center;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+
+/* Label Styles */
+label {
+    color: #0D1321; /* Dark Blue */
+    font-weight: bold;
+    flex-basis: calc(50% - 10px); /* 50% width for labels, accounting for margin */
+    margin-bottom: 5px;
+}
+
+/* Input Styles */
+input[type="date"],
+input[type="number"] {
+    flex-basis: calc(50% - 10px); /* 50% width for inputs, accounting for margin */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #788C9F; /* Mid Gray */
+    border-radius: 3px;
+    background-color: #FFF2CA; /* Light Yellow */
+    margin-right: 10px; /* Add space between input elements */
+}
+/* Search Button Styles */
+.search-button {
+    background-color: green; /*teal-200*/
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: inline-block; /* Display the button inline to center it */
+}
+
+
+
+/* Center the search button */
+.search-form button[type="submit"] {
+    
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto; /* Center horizontally */
+    cursor: pointer;
+    display: block; /* Make it a block-level element to center it */
+}
+
+
+
+/* .button {
+
+    border-radius: 3px;
+  /* #################### */
+
+    color: black;
+    /* padding: 10px 20px; */
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    /* margin: 0 auto; Center horizontally */
+    cursor: pointer;
+    display: block; /* Make it a block-level element to center it*/
+    position: absolute;
+} */
+
+
+/* Search Results Section Styles */
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #788C9F; /* Mid Gray */
+}
+
+.result-card {
+    flex-basis: calc(33.33% - 20px); /* 3 cards per row with spacing */
+    margin-bottom: 20px;
+    background-color: #FFF2CA; /* Light */
+    border: 1px solid #F0F0F0; /* Light Gray */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.result-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.result-details {
+    padding: 20px;
+}
+
+.result-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0D1321; /* Dark Blue */
+}
+
+.result-details p {
+    font-size: 14px;
+    color: #788C9F; /* Mid */
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #008000; /* Green */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #006400; /* Dark Green */
+}
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+
+ 
+
+/* Layouts */
+
+header,footer{
+  display: block;
+  text-align: center;
+  height: 10vh;
+  width: 100%;
+  font-size: .8rem;
+  background-color: white;
+  color: black;
+  
+}
+
+footer > a {
+  margin: 1em;
+  color: black;
+}
+ .styleButton{
+    background-color: #008000; 
+   color: white;
+   border: none;
+   font-size: 1.5em;
+   font-size: 2em;    
+    margin-top: .5em;
+    margin-bottom: .5em;
+   cursor: pointer;
+   outline: none;
+   
+   padding: 10px;
+   width: 30%;
+ }
+
+ 
+ 
+.main-container{
+    display:flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;                         
+    font-size: 1em;
+    color: #fff;
+} 
+
+
+
+.slide-container{
+  display:flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 90vh;
+    width:90%;                                        
+}
+.empty-slide-container{
+  display:flex;
+  flex-direction: column;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    height: 120vh;
+    width:90%;                                        
+}
+
+
+  .panel {
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: .3em;
+    height: 80vh;
+    width: 100vw;
+    
+  }
+
+  .panel > a{
+    color: black;
+  }
+
+  .panel.active{
+    flex: 5;
+    text-decoration: none;
+    color: white;
+    font-size: 1.8em;
+  }
+
+ 
+  .others{
+    font-size: 1.3em;
+   
+    line-height: 1.8em;
+    background-color: #fff;
+    letter-spacing: 1px;
+    color: black;
+    height: 100vh;
+
+  }
+
+  .the-others{
+    font-size: 1.3em;
+   
+    line-height: 1.8em;
+    
+    letter-spacing: 1px;
+   
+ height: auto;
+
+  }
+
+
+
+/* MEDIA QUERY */
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+
+  footer,
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    font-size: .5rem;
+    background-color: white;
+    color: black;
+  }
+
+  .iconStyle{
+    font-size: 1.3em;   
+  }
+
+  
+
+  
+
+  footer > a {
+    font-size: 15px;
+    margin: .3em;
+    
+  }
+  footer > p{
+    font-size: 2em;
+  }
+  .others{
+    font-size: 1.5em;
+    overflow-y: scroll;
+    line-height: 1.3em;
+    background-color: #fff;
+    letter-spacing: 1px;
+    color: black;
+    height: 50vh;
+
+  }
+
+.styleButton {
+    font-size: 2em;
+   margin-top: .5em;
+    margin-bottom: .5em;
+    width: 80%;
+}
+} 
+
+
+
+
+
+
+
+
+    .moving-gradient {
+      
+      background: linear-gradient(45deg);
+      background-size: 400% 400%;
+      animation: movingGradient 10s ease infinite;
+    }
+
+    @keyframes movingGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px; /* You can adjust the max-width as needed */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Paralax scroll */
+
+
+  .image-details-container {
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+  }
+
+  .parallax {
+    transform: translateY(50%);
+  }
+
+
+  .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 60px; /* Adjust as needed based on your header height */
+      right: 0;
+      background-color: #523015; /* Change to your desired background color */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 10px;
+      color: #9d7739; /* Change to your desired text color */
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .mobile-menu a:hover {
+      background-color: #fed28b; /* Change to your desired hover background color */
+      color: #fff; /* Change to your desired hover text color */
+    }
