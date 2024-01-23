@@ -9,8 +9,14 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
-const postRoutes = require("./routes/posts");
+// const postRoutes = require("./routes/posts");
+const feedbackRoutes = require("./routes/feedback")
+const feedRoutes = require("./routes/main");
+const fetchApodRoutes = require("./routes/fetchApod");
+const resultRoutes = require("./routes/result")
 
+
+const sanitizer = require('express-sanitizer');
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
@@ -22,6 +28,8 @@ connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
+
+app.use(sanitizer());
 
 //Static Folder
 app.use(express.static("public"));
@@ -55,7 +63,12 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
-app.use("/post", postRoutes);
+app.use(feedbackRoutes);
+app.use("/feed", feedRoutes);
+app.use('/auth', require('./routes/auth'))
+app.use(fetchApodRoutes)
+app.use(resultRoutes)
+
 
 
 //Server Running
