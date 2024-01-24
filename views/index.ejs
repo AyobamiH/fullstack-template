@@ -1,11 +1,48 @@
+<%- include('partials/head') -%>
 <%- include('partials/header') -%>
 
-<main class="container">
-    <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+  <body id="top" class="flex  moving-gradient items-center flex-col text-center bg-gradient-to-r from-[#523015] via-[#a47739] to-[#996f36] mx-auto  w-full sm:px-6 lg:items-center">
+  
+    <!-- HERO -->
+      
+    <div class="flex flex-col aspect-square lg:w-3/5 h-4/5 justify-center sm:w-full text-base/loose  bg-[url(/imgs/SunSpotHill_Coy_2358.jpg)] bg-cover bg-center bg-no-repeat ">
+    
+ 
+      <h1 class="text-4xl md:text-5xl mt-8 lg:text-6xl font-extrabold leading-tight text-white">
+            Your Digital Gateway to
+            <strong class="block font-extrabold">
+                The Wonders <strong class="text-white">of Space.</strong>
+            </strong>
+      </h1>
+
+      <p class="mt-4  max-w-lg dark:text-black mx-auto text-[#60391b] font-normal font-mono text-lg leading-7">
+          On a mission to inspire the next <span class="text-white font-normal font-mono text-lg leading-7">generation of</span>  scientists, astronomers, and space <span class="text-white font-normal font-mono text-lg leading-7"> enthusiasts.</span>
+      </p>
+
+      <div class="mt-8 flex flex-col gap-4 items-center">
+        <a href="/login" class="w-full lg:w-2/5 hero-call-to-action-button-two block rounded  px-8 py-3 text-lg font-medium text-white bg-[#3d280f] hover:bg-[#987842] hover:text-[#e4993e] focus:ring focus:ring-[#a16534]  sm:w-auto  hover:outline-none">
+          Get Started
+        </a>
+
+        <a href="/about" class="w-full lg:w-2/5 hero-call-to-action-buttons-shadow shadow-sm block w-full rounded bg-white px-8 py-3 text-lg font-medium hover:bg-black text-[#432410] hover:text-[#e4993e] hover:outline-none focus:outline-none focus:ring  sm:w-auto" onclick="scrollToAbout()">
+          Learn More
+        </a>
+      </div>
     </div>
-</main>
+   
+
+
+    <!-- About section below the fold -->
+
     
 
-<%- include('partials/footer') -%>
+    
+   
+  </body>
+
+      
+    <%- include('partials/footer') -%>
+  <script src="/js/main.js"></script>
+  <script src="/js/menuButton.js"></script>
+
+
